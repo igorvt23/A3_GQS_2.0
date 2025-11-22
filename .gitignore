@@ -1,0 +1,5 @@
+# Arquivos compilados e pasta target
+target/
+
+# Arquivos do VS Code
+.vscode/
