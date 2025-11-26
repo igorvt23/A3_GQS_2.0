@@ -28,9 +28,10 @@ public class EmailController {
         boolean success = emailServer.sendEmail(message);
 
         if (success) {
-            return ResponseEntity.ok("Email enviado com sucesso.");
+            // Isso cria um JSON manual: { "mensagem": "Email enviado com sucesso." }
+            return ResponseEntity.ok("{ \"mensagem\": \"Email enviado com sucesso.\" }");
         } else {
-            return ResponseEntity.badRequest().body("Falha ao enviar o email. Verifique os endereços.");
+            return ResponseEntity.badRequest().body("{ \"erro\": \"Falha ao enviar o email. Verifique os endereços.\" }");
         }
     }
 }
